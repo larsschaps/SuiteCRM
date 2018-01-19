@@ -424,7 +424,7 @@ class Email extends Basic
      * @var string
      */
     public $AltBody;
-    
+
     public $msgNo;
 
     /**
@@ -1764,7 +1764,7 @@ class Email extends Basic
         }
 
         $noteArray = array();
-        $q = "SELECT id FROM notes WHERE parent_id = '" . $id . "'";
+        $q = "SELECT id FROM notes WHERE deleted = 0 AND parent_id = '" . $id . "'";
         $r = $this->db->query($q);
 
         while ($a = $this->db->fetchByAssoc($r)) {
@@ -2322,7 +2322,10 @@ class Email extends Basic
 
         ///////////////////////////////////////////////////////////////////////////
         ////    ATTACHMENTS FROM DRAFTS
-        if (($this->type == 'out' || $this->type == 'draft') && $this->status == 'draft' && isset($_REQUEST['record'])) {
+        if (($this->type == 'out' || $this->type == 'draft')
+            && $this->status == 'draft'
+            && isset($_REQUEST['record'])
+            && empty($_REQUEST['ignoreParentAttachments'])) {
             $this->getNotes($_REQUEST['record']); // cn: get notes from OLD email for use in new email
         }
         ////    END ATTACHMENTS FROM DRAFTS
@@ -3114,7 +3117,7 @@ class Email extends Basic
             $this->status_name = $app_list_strings['dom_email_status'][$this->status];
         }
 
-        if (empty($this->name) && empty($_REQUEST['record'])) {
+        if (empty($this->name) && empty($_REQUEST['record']) && !empty($mod_strings['LBL_NO_SUBJECT'])) {
             $this->name = $mod_strings['LBL_NO_SUBJECT'];
         }
 

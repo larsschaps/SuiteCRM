@@ -2363,6 +2363,14 @@ $app_strings = array(
     'LBL_SUBTHEME_OPTIONS_DAY' => 'Day',
     'LBL_SUBTHEME_OPTIONS_DUSK' => 'Dusk',
     'LBL_SUBTHEME_OPTIONS_NIGHT' => 'Night',
+
+    'LBL_SECURITYGROUP_NONINHERITABLE' => 'Non-Inheritable Group',
+    'LBL_PRIMARY_GROUP' => "Primary Group",
+
+    'LBL_CONFIRM_DISREGARD_DRAFT_TITLE' => 'Disregard draft',
+    'LBL_CONFIRM_DISREGARD_DRAFT_BODY' => 'This operation will delete this email, do you want to continue?',
+    'LBL_CONFIRM_APPLY_EMAIL_TEMPLATE_TITLE' => 'Apply an Email Template',
+    'LBL_CONFIRM_APPLY_EMAIL_TEMPLATE_BODY' => 'This operation will override the email Body and Subject fields, do you want to continue?',
 );
 
 $app_list_strings['moduleList']['Library'] = 'Library';
