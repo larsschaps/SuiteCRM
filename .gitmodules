@@ -1,0 +1,6 @@
+[submodule "custom/modulebuilder/packages/SQLReport"]
+	path = custom/modulebuilder/packages/SQLReport
+	url = http://gbl.msg.de/scm/git/SuiteCRM-SQLReport
+[submodule "custom/modulebuilder/builds/SQLReport"]
+	path = custom/modulebuilder/builds/SQLReport
+	url = http://gbl.msg.de/scm/git/SuiteCRM-SQLReport-Build
